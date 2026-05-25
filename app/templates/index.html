@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Менеджер задач</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .task { margin: 5px 0; }
+        input { padding: 5px; width: 300px; }
+        button { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h1>Список задач</h1>
+
+    <form action="/add" method="post">
+        <input type="text" name="task" placeholder="Введите задачу..." required>
+        <button type="submit">Добавить</button>
+    </form>
+
+    <h2>Текущие задачи:</h2>
+    <ul>
+        {% for task in tasks %}
+            <li class="task">{{ task[1] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
